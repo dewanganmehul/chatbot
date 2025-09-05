@@ -2,9 +2,10 @@ import { useState } from 'react'
 import './App.css'
 import axios from 'axios'
 function App() {
-  const [count, setCount] = useState(0)
+  const [question, setQuestion] = useState("")
+  const [answer, setAnswer] = useState("")
   async function generateResponse(){
-    console.log("loading..")
+    setAnswer("loading..")
    const response= await axios({
       url: "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyAadkr2gDYgbaASBvFAembtO8FGX3EqR24",
       method: "post",
@@ -13,21 +14,33 @@ function App() {
       {
         "parts": [
           {
-            "text": "tell me about india"
+            "text": question
           }
         ]
       }
     ]
   }
     })
-    console.log(response['data']['candidates'][0]['content']['parts'][0]['text'])
+setAnswer(response['data']['candidates'][0]['content']['parts'][0]['text'])
   }
 
   return (
     <>
-      <div>
+      <div className='main-container'>
         <h1>ai chat bot</h1>
-        <button onClick={generateResponse}>search</button>
+        <textarea className='text-area'
+        value={question}
+        onChange={(e)=>{
+         setQuestion(e.target.value)
+        
+        }}
+        >
+
+        </textarea>
+        <button className='search-btn' onClick={generateResponse}>Generate Response</button>
+        <pre className='response'>
+          {answer}
+        </pre>
     </div>
     </>
   )

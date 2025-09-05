@@ -1,4 +1,4 @@
-/* Global Styles */
+
 body {
 margin: 0;
 font-family: 'Inter', sans-serif;
@@ -13,7 +13,7 @@ padding: 20px;
 -moz-osx-font-smoothing: grayscale;
 }
 
-/* Main Container - Chatbot Card */
+
 .main-container {
 background: rgba(17, 24, 39, 0.7);
 backdrop-filter: blur(20px) saturate(150%);
@@ -31,7 +31,7 @@ transition: transform 0.3s ease-in-out;
 transform: translateY(-5px);
 }
 
-/* Header */
+
 h1 {
 margin-bottom: 30px;
 font-size: 36px;
@@ -44,7 +44,7 @@ background: linear-gradient(90deg, #4f46e5, #8b5cf6);
 text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* Input Text Area */
+
 .text-area {
 width: 100%;
 height: 120px;
@@ -69,7 +69,7 @@ border-color: #6366f1;
 box-shadow: 0 0 18px rgba(99, 102, 241, 0.5);
 }
 
-/* Search Button */
+
 .search-btn {
 background: linear-gradient(90deg, #6366f1, #8b5cf6);
 border: none;
@@ -100,7 +100,6 @@ transform: none;
 box-shadow: none;
 }
 
-/* Response Area */
 .response {
 margin-top: 30px;
 text-align: left;
@@ -116,7 +115,7 @@ box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
 line-height: 1.6;
 }
 
-/* Custom Scrollbar */
+
 .response::-webkit-scrollbar {
 width: 10px;
 }
